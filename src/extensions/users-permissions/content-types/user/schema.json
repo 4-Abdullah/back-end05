@@ -75,6 +75,16 @@
       "relation": "oneToOne",
       "target": "api::cart.cart",
       "mappedBy": "user"
+    },
+    "addtocart": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cart.cart"
+    },
+    "List": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cart.productlist"
     }
   }
 }

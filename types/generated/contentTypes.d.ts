@@ -669,6 +669,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToOne',
       'api::cart.cart'
     >;
+    addtocart: Attribute.Component<'cart.cart'>;
+    List: Attribute.Component<'cart.productlist', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1002,18 +1004,15 @@ export interface ApiCartCart extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    ProductId: Attribute.UID;
     TotalPrice: Attribute.Integer;
-    Quantity: Attribute.Integer;
-    CartId: Attribute.UID;
     user: Attribute.Relation<
       'api::cart.cart',
       'oneToOne',
       'plugin::users-permissions.user'
     >;
-    product: Attribute.Relation<
+    products: Attribute.Relation<
       'api::cart.cart',
-      'manyToOne',
+      'oneToMany',
       'api::product.product'
     >;
     createdAt: Attribute.DateTime;
@@ -1158,20 +1157,10 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     description: Attribute.Text;
     image: Attribute.Media & Attribute.Required;
-    size: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 70;
-      }>;
-    color: Attribute.Enumeration<['red', 'green', 'blue']> & Attribute.Required;
     price: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     availableQty: Attribute.Integer &
       Attribute.Required &
       Attribute.DefaultTo<0>;
-    carts: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::cart.cart'
-    >;
     categoryname: Attribute.Relation<
       'api::product.product',
       'manyToOne',

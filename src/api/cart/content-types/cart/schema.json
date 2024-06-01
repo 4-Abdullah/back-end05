@@ -12,17 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ProductId": {
-      "type": "uid"
-    },
     "TotalPrice": {
       "type": "integer"
-    },
-    "Quantity": {
-      "type": "integer"
-    },
-    "CartId": {
-      "type": "uid"
     },
     "user": {
       "type": "relation",
@@ -30,11 +21,10 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "cart"
     },
-    "product": {
+    "products": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::product.product",
-      "inversedBy": "carts"
+      "relation": "oneToMany",
+      "target": "api::product.product"
     }
   }
 }

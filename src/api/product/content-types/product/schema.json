@@ -35,19 +35,6 @@
         "images"
       ]
     },
-    "size": {
-      "type": "string",
-      "maxLength": 70
-    },
-    "color": {
-      "type": "enumeration",
-      "enum": [
-        "red",
-        "green",
-        "blue"
-      ],
-      "required": true
-    },
     "price": {
       "type": "integer",
       "required": true,
@@ -57,12 +44,6 @@
       "type": "integer",
       "required": true,
       "default": 0
-    },
-    "carts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::cart.cart",
-      "mappedBy": "product"
     },
     "categoryname": {
       "type": "relation",
