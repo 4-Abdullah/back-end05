@@ -6,6 +6,7 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
+    "start:win": "cross-env NODE_ENV=production npm start",
     "build:win": "cross-env NODE_ENV=production npm run build",
     "strapi": "strapi"
   },
