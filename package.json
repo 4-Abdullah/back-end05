@@ -8,6 +8,7 @@
     "start": "strapi start",
     "start:win": "cross-env NODE_ENV=production npm start",
     "build:win": "cross-env NODE_ENV=production npm run build",
+    "build": "strapi build",
     "strapi": "strapi"
   },
   "dependencies": {
