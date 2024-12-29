@@ -12,12 +12,14 @@ module.exports = ({ env }) => ({
     //     },
     //   },
     // },
+      // ... 
+       
     email: {
       config: {
         provider: 'sendmail',
         settings: {
-          defaultFrom: 'abdullahmaliksher4@protonmail.com',
-          defaultReplyTo: 'abdullahmaliksher4@protonmail.com',
+          defaultFrom: 'abdullahmaliksher@gmail.com',
+          defaultReplyTo: 'abdullahmaliksher4@gmail.com',
         },
       },
     },
